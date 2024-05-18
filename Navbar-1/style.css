@@ -1,3 +1,4 @@
+/* Import Google Fonts for Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 /* Basic styles */
@@ -10,11 +11,11 @@
 }
 
 :root {
-  --primary-clr: #ff6f59;
-  --secondary-clr: #131515;
-  --white-clr: #fff;
-  --black-clr: #000;
-  --bg-clr: #f6f6f6;
+  --primary-clr: #ff6f59; /* Define primary color variable */
+  --secondary-clr: #131515; /* Define secondary color variable */
+  --white-clr: #fff; /* Define white color variable */
+  --black-clr: #000; /* Define black color variable */
+  --bg-clr: #f6f6f6; /* Define background color variable */
 }
 
 body {
@@ -32,35 +33,8 @@ li {
   list-style: none;
 }
 
-.container {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.btn-outline {
-  color: var(--black-clr);
-  padding: 0.7rem 2.5rem;
-  border-radius: 0.4rem;
-  font-family: inherit;
-  font-size: 1.1rem;
-  text-transform: capitalize;
-  font-weight: 500;
-  cursor: pointer;
-  background-color: transparent;
-  border: 2px solid var(--primary-clr);
-  color: var(--primary-clr);
-  cursor: pointer;
-  transform: all 0.2s ease;
-}
-
-.btn-outline:hover {
-  background-color: var(--primary-clr);
-  color: var(--black-clr);
-}
-
 /* Header Section */
-.header {
+.standard-header {
   padding: 1.2rem 0;
   position: fixed;
   width: 100%;
@@ -69,61 +43,82 @@ li {
   z-index: 50;
 }
 
-.header .d-flex {
+.standard-header .d-flex {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-inline: 1rem;
 }
 
-.toggle-menu {
+.standard-header .toggle-menu {
   display: none;
 }
 
-.logo {
+.standard-header .logo {
   z-index: 40;
   font-size: 1.3rem;
   color: var(--black-clr);
   font-weight: bold;
 }
 
-/* navigation menu */
-.nav {
+/* Navigation menu */
+.standard-header .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
 
-.nav__list {
+.standard-header .nav__list {
   display: flex;
   align-items: center;
   margin: 0 auto;
 }
 
-.nav__list li {
+.standard-header .nav__list li {
   margin: 0 1rem;
   text-transform: capitalize;
 }
 
-.nav__list a {
+.standard-header .nav__list a {
   color: var(--secondary-clr);
   font-weight: 500;
   font-size: 1rem;
   transition: color 0.2s ease;
 }
 
-.nav__list a:hover {
+.standard-header .nav__list a:hover {
   color: var(--primary-clr);
 }
 
-.nav__list .active {
+.standard-header .nav__list .active {
   color: var(--primary-clr);
 }
 
-/*  Responsiveness  */
-/* mobile navigation menu */
+/* Button styles */
+.standard-header .btn-outline {
+  color: var(--black-clr);
+  padding: 0.7rem 2.5rem;
+  border-radius: 0.4rem;
+  font-family: inherit;
+  font-size: 1rem;
+  text-transform: capitalize;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: transparent;
+  border: 2px solid var(--primary-clr);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.standard-header .btn-outline:hover {
+  background-color: var(--primary-clr);
+  color: var(--black-clr);
+}
+
+/* Responsiveness */
+/* Mobile navigation menu */
 @media (max-width: 48rem) {
-  .toggle-menu {
+  .standard-header .toggle-menu {
     border: 0;
     display: inline-block;
     background-color: transparent;
@@ -132,7 +127,7 @@ li {
     display: block;
   }
 
-  .nav {
+  .standard-header .nav {
     display: block;
     position: fixed;
     top: 0;
@@ -144,25 +139,25 @@ li {
     transition: transform 0.6s ease-in-out;
   }
 
-  /* javascript style start*/
-  .nav.showNav {
+  /* JavaScript styles start */
+  .standard-header .nav.showNav {
     transform: translateX(0rem);
   }
 
-  .toggle-menu i.closeIcon::before {
+  .standard-header .toggle-menu i.closeIcon::before {
     content: '\f00d';
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
     font-size: 2rem;
   }
 
-  /* remove this property if you are using an image */
-  .invertLogo {
+  /* Remove this property if you are using an image */
+  .standard-header .invertLogo {
     color: var(--white-clr);
   }
+  /* JavaScript styles end */
 
-  /* javascript style end*/
-  .nav__list {
+  .standard-header .nav__list {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -170,41 +165,28 @@ li {
     padding-top: 8rem;
   }
 
-  .nav__list li {
+  .standard-header .nav__list li {
     margin-bottom: 1.2rem;
     text-transform: capitalize;
   }
 
-  .nav__list a {
+  .standard-header .nav__list a {
     color: var(--white-clr);
     font-weight: 500;
     font-size: 1.1rem;
     transition: color 0.2s ease;
   }
 
-  .nav__list a:hover {
+  .standard-header .nav__list a:hover {
     color: var(--primary-clr);
   }
 
-  .nav__list .active {
+  .standard-header .nav__list .active {
     color: var(--primary-clr);
   }
 
-  .cta {
+  .standard-header .cta {
     margin-left: 1rem;
     font-weight: 500;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    width: 992px;
-    margin: 0 auto;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    width: 1100px;
   }
 }

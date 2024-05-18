@@ -1,40 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Set character set and define viewport -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Link to external stylesheet and Font Awesome CSS -->
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
-    <title>Navbar 1</title>
+
+    <!-- Set the title of the page -->
+    <title>Standard Nav Bar</title>
   </head>
   <body>
-    <header class="header">
-      <div class="container d-flex">
-        <!-- remove the invert-class in css and js file if you are using an image -->
+    <!-- Header section -->
+    <header class="standard-header">
+      <!-- Container for logo, navigation toggle, and navigation links -->
+      <div class="d-flex">
+        <!-- Logo with a link to # (replace # with actual link) -->
         <a href="#" class="logo">Logo</a>
 
-        <!-- nav toggle -->
-        <button class="toggle-menu">
+        <!-- Navigation toggle button with an icon -->
+        <button class="toggle-menu" aria-label="Toggle Navigation">
           <i class="fas fa-bars"></i>
         </button>
 
-        <!-- Nav section-->
+        <!-- Navigation section -->
         <nav class="nav">
-          <ul role="list" class="nav__list">
+          <!-- Unordered list for navigation links -->
+          <ul class="nav__list">
             <li><a class="active nav__link" href="#">home</a></li>
             <li><a class="nav__link" href="#">about</a></li>
+            <li><a class="nav__link" href="#">blog</a></li>
             <li><a class="nav__link" href="#">work</a></li>
+            <li><a class="nav__link" href="#">contact</a></li>
           </ul>
 
+          <!-- Button for signing in -->
           <button class="btn-outline | nav__link cta">sign in</button>
         </nav>
       </div>
     </header>
 
+    <!-- Include external JavaScript file -->
     <script src="script.js"></script>
   </body>
 </html>
